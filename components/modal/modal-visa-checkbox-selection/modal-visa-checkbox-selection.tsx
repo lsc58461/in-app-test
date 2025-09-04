@@ -8,6 +8,7 @@ import { VisaType } from "@/types/visa";
 import { Modal } from "../modal";
 
 import { VisaCheckboxSelector } from "./visa-checkbox-selector";
+import { ModalHeader } from "../modal-header";
 
 interface IModalVisaSelectionProps {
   selectedVisa?: (VisaType | "NA")[];
@@ -32,7 +33,7 @@ function ModalVisaCheckboxSelection({
 
   return (
     <Modal>
-      <Modal.Header
+      <ModalHeader
         text="title.selectVisa"
         subText="Visa selection"
         onCloseClick={handleCloseClick}

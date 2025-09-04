@@ -11,6 +11,10 @@ import { cn } from "@/utils/cn";
 import { formateAddress } from "@/utils/formate-address";
 
 import { Filter } from "../filter";
+import { ModalDim } from "@/components/modal/modal-dim";
+import { ModalAddressSearch } from "@/components/modal/modal-address-search/modal-address-search";
+import { ModalNationalitySelection } from "@/components/modal/modal-nationality-selection/modal-nationality-selection";
+import { ModalVisaCheckboxSelection } from "@/components/modal/modal-visa-checkbox-selection/modal-visa-checkbox-selection";
 
 interface IFilterWorkerPoolProps {
   getCategoryById: (id: string) => InternalFilterCategory | undefined;
@@ -71,8 +75,8 @@ function FilterWorkerPool({
           isHr
         />
         <Portal id="portal2" isPortalOpen={isAreaModalOpen} zIndex={9803}>
-          <Modal.Dim dimRef={areaDimRef} onDimClick={closeAreaModal}>
-            <Modal.AddressSearch
+          <ModalDim dimRef={areaDimRef} onDimClick={closeAreaModal}>
+            <ModalAddressSearch
               onSelectedAddressChange={(address) => {
                 handleCheckboxChange(
                   "residence",
@@ -85,7 +89,7 @@ function FilterWorkerPool({
               }}
               onCloseClick={closeAreaModal}
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
         <Filter.ModalTrigger
           title={getCategoryById("nationality")?.label || ""}
@@ -100,17 +104,17 @@ function FilterWorkerPool({
           isPortalOpen={isNationalityModalOpen}
           zIndex={9803}
         >
-          <Modal.Dim
+          <ModalDim
             dimRef={nationalityDimRef}
             onDimClick={closeNationalityModal}
           >
-            <Modal.NationalitySelection
+            <ModalNationalitySelection
               onSelectedNationalityChange={(nationality) => {
                 handleCheckboxChange("nationality", nationality);
               }}
               onCloseClick={closeNationalityModal}
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
         <Filter.ModalTrigger
           title={getCategoryById("currentVisaType")?.label || ""}
@@ -126,11 +130,11 @@ function FilterWorkerPool({
           isPortalOpen={isCurrentVisaModalOpen}
           zIndex={9803}
         >
-          <Modal.Dim
+          <ModalDim
             dimRef={currentVisaDimRef}
             onDimClick={closeCurrentVisaModal}
           >
-            <Modal.VisaCheckboxSelection
+            <ModalVisaCheckboxSelection
               onCloseClick={closeCurrentVisaModal}
               onSelectedVisaChange={(visa) => {
                 getSelectedOptions()
@@ -154,7 +158,7 @@ function FilterWorkerPool({
               }
               isNone
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
 
         <Filter.ModalTrigger
@@ -171,11 +175,11 @@ function FilterWorkerPool({
           isPortalOpen={isPreferredVisaModalOpen}
           zIndex={9803}
         >
-          <Modal.Dim
+          <ModalDim
             dimRef={preferredVisaDimRef}
             onDimClick={closePreferredVisaModal}
           >
-            <Modal.VisaCheckboxSelection
+            <ModalVisaCheckboxSelection
               onCloseClick={closePreferredVisaModal}
               onSelectedVisaChange={(visa) => {
                 getSelectedOptions()
@@ -199,7 +203,7 @@ function FilterWorkerPool({
               }
               isNone
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
 
         <Filter.Accordion

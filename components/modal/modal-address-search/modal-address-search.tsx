@@ -8,6 +8,7 @@ import { IResidence, useResumeStore } from "@/stores/use-resume-store";
 import { Modal } from "../modal";
 
 import { AddressSearch } from "./address-search";
+import { ModalHeader } from "../modal-header";
 
 interface IModalAddressSearchProps {
   selectedAddress?: IResidence;
@@ -33,7 +34,7 @@ function ModalAddressSearch({
 
   return (
     <Modal>
-      <Modal.Header
+      <ModalHeader
         text="Search for Addresses"
         subText="Search for Addresses"
         onCloseClick={handleCloseClick}

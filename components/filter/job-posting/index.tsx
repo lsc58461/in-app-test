@@ -13,6 +13,10 @@ import { cn } from "@/utils/cn";
 import { formateAddress } from "@/utils/formate-address";
 
 import { Filter } from "../filter";
+import { ModalDim } from "@/components/modal/modal-dim";
+import { ModalAddressSearch } from "@/components/modal/modal-address-search/modal-address-search";
+import { ModalResponsibilitySelection } from "@/components/modal/modal-responsibility-selection/modal-responsibility-selection";
+import { ModalVisaSelection } from "@/components/modal/modal-visa-selection/modal-visa-selection";
 
 interface IFilterWorkerPoolProps {
   getCategoryById: (id: string) => InternalFilterCategory | undefined;
@@ -79,8 +83,8 @@ function FilterJobPosting({
           isHr
         />
         <Portal id="portal2" isPortalOpen={isAreaModalOpen} zIndex={9802}>
-          <Modal.Dim dimRef={areaDimRef} onDimClick={closeAreaModal}>
-            <Modal.AddressSearch
+          <ModalDim dimRef={areaDimRef} onDimClick={closeAreaModal}>
+            <ModalAddressSearch
               onSelectedAddressChange={(address) => {
                 handleCheckboxChange(
                   "residence",
@@ -93,7 +97,7 @@ function FilterJobPosting({
               }}
               onCloseClick={closeAreaModal}
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
 
         <Filter.ModalTrigger
@@ -109,11 +113,11 @@ function FilterJobPosting({
           isPortalOpen={isResponsibilityModalOpen}
           zIndex={9802}
         >
-          <Modal.Dim
+          <ModalDim
             dimRef={responsibilityDimRef}
             onDimClick={closeResponsibilityModal}
           >
-            <Modal.ResponsibilitySelection
+            <ModalResponsibilitySelection
               onSelectedResponsibilityChange={(responsibility) => {
                 handleCheckboxChange(
                   "responsibility",
@@ -122,7 +126,7 @@ function FilterJobPosting({
               }}
               onCloseClick={closeResponsibilityModal}
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
 
         <Filter.ModalTrigger
@@ -138,11 +142,11 @@ function FilterJobPosting({
           isPortalOpen={isPreferredVisaModalOpen}
           zIndex={9802}
         >
-          <Modal.Dim
+          <ModalDim
             dimRef={preferredVisaDimRef}
             onDimClick={closePreferredVisaModal}
           >
-            <Modal.VisaSelection
+            <ModalVisaSelection
               type="preferred"
               onCloseClick={closePreferredVisaModal}
               onSelectedVisaChange={(visa) => {
@@ -155,7 +159,7 @@ function FilterJobPosting({
               }
               noneText="irrelevant"
             />
-          </Modal.Dim>
+          </ModalDim>
         </Portal>
 
         <Filter.Accordion

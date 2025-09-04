@@ -10,6 +10,7 @@ import { useLoadingStore } from "@/stores/use-loading-store";
 import { Modal } from "../modal";
 
 import { ResponsibilitySelector } from "./responsibility-selector";
+import { ModalHeader } from "../modal-header";
 
 interface IModalResponsibilitySelectionProps {
   selectedResponsibility?: TResponsibility;
@@ -46,7 +47,7 @@ function ModalResponsibilitySelection({
 
   return (
     <Modal>
-      <Modal.Header
+      <ModalHeader
         text="업무내용"
         subText="responsibility selection"
         onCloseClick={handleCloseClick}

@@ -8,6 +8,7 @@ import { VisaType } from "@/types/visa";
 import { Modal } from "../modal";
 
 import { VisaSelector } from "./visa-selector";
+import { ModalHeader } from "../modal-header";
 
 interface IModalVisaSelectionProps {
   type: "current" | "preferred";
@@ -34,7 +35,7 @@ function ModalVisaSelection({
 
   return (
     <Modal>
-      <Modal.Header
+      <ModalHeader
         text="title.selectVisa"
         subText="Visa selection"
         onCloseClick={handleCloseClick}

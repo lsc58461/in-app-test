@@ -7,6 +7,7 @@ import { Button } from "@/components/button/button";
 import { Modal } from "../modal";
 
 import { NationalitySelector } from "./nationality-selector";
+import { ModalHeader } from "../modal-header";
 
 interface IModalNationalitySelectionProps {
   selectedNationality?: string;
@@ -29,7 +30,7 @@ function ModalNationalitySelection({
 
   return (
     <Modal>
-      <Modal.Header
+      <ModalHeader
         text="국가 선택"
         subText="nationality selection"
         onCloseClick={handleCloseClick}
