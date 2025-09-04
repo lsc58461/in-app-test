@@ -5,17 +5,6 @@ import { ReactNode, RefObject } from "react";
 
 import { cn } from "@/utils/cn";
 
-import { ModalAddressSearch } from "./modal-address-search/modal-address-search";
-
-import { ModalDim } from "./modal-dim";
-import { ModalFilter } from "./modal-filter/modal-filter";
-import { ModalHeader } from "./modal-header";
-import { ModalListItemBackground } from "./modal-list-item-background";
-import { ModalNationalitySelection } from "./modal-nationality-selection/modal-nationality-selection";
-import { ModalResponsibilitySelection } from "./modal-responsibility-selection/modal-responsibility-selection";
-import { ModalVisaCheckboxSelection } from "./modal-visa-checkbox-selection/modal-visa-checkbox-selection";
-import { ModalVisaSelection } from "./modal-visa-selection/modal-visa-selection";
-
 interface IModalWrapperProps {
   className?: string;
   subClassName?: string;
@@ -50,15 +39,5 @@ function Modal({
     </div>
   );
 }
-
-Modal.Dim = ModalDim;
-Modal.Header = ModalHeader;
-Modal.ListItemBackground = ModalListItemBackground;
-Modal.VisaSelection = ModalVisaSelection;
-Modal.AddressSearch = ModalAddressSearch;
-Modal.NationalitySelection = ModalNationalitySelection;
-Modal.Filter = ModalFilter;
-Modal.ResponsibilitySelection = ModalResponsibilitySelection;
-Modal.VisaCheckboxSelection = ModalVisaCheckboxSelection;
 
 export { Modal };

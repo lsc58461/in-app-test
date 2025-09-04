@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin*
+Disallow: /*/admin*
+
+# Host
+Host: https://workvisa.co.kr
+
+# Sitemaps
+Sitemap: https://workvisa.co.kr/sitemap.xml
+Sitemap: https://workvisa.co.kr/server-sitemap-index.xml

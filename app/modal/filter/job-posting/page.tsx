@@ -3,7 +3,7 @@
 import { FilterFloatingButton } from "@/components/filter/filter-floating-button";
 import { jobPostingInitialCategories } from "@/components/filter/job-posting/job-posting-initial-categories";
 import { JobPostingCardSkeletonList } from "@/components/job-posting/job-posting-card-skeleton-list";
-import { Modal } from "@/components/modal/modal";
+import { ModalFilter } from "@/components/modal/modal-filter/modal-filter";
 import { Portal } from "@/components/portal/portal";
 import { useFilter } from "@/hooks/use-filter";
 import { useModal } from "@/hooks/use-modal";
@@ -27,7 +27,7 @@ function FilterModal() {
       <JobPostingCardSkeletonList />
       <FilterFloatingButton onButtonClick={openFilterModal} />
       <Portal id="portal1" isPortalOpen={isFilterModal}>
-        <Modal.Filter
+        <ModalFilter
           type="jobPosting"
           getCategoryById={getCategoryById}
           handleCheckboxChange={handleCheckboxChange}

@@ -4,6 +4,7 @@ import { cn } from "@/utils/cn";
 import "../styles/globals.css";
 import { BackgroundDeco } from "@/components/background-deco/background-deco";
 import { GNBBottomTab } from "@/components/gnb/gnb-bottom-tab";
+import { Gnb } from "@/components/gnb/gnb";
 
 export default function RootLayout({
   children,
@@ -13,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={cn("bg-backgroundBlueLight")}>
+        <Gnb />
         {children}
         <GNBBottomTab />
         <BackgroundDeco currentSection={0} />
