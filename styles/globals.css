@@ -1,0 +1,436 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@config "../tailwind.config.ts";
+
+@font-face {
+  font-family: "PretendardVariable";
+  src: url("https://kr.object.ncloudstorage.com/workvisa/assets/PretendardVariable.woff2")
+    format("woff2-variations");
+  font-weight: 45 920;
+  font-display: swap;
+  font-style: normal;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@theme {
+  --color-black: #101223;
+  --color-blackLight: #404252;
+  --color-grayDark: #9496a1;
+  --color-grayDefault: #b3b5bd;
+  --color-grayLight: #d2d4da;
+  --color-grayLighter: #f3f4f8;
+  --color-grayWhite: rgba(243, 243, 243, 0.56);
+  --color-white: #ffffff;
+  --color-white88: rgba(255, 255, 255, 0.88);
+  --color-white72: rgba(255, 255, 255, 0.72);
+  --color-white56: rgba(255, 255, 255, 0.56);
+  --color-white28: rgba(255, 255, 255, 0.28);
+  --color-white20: rgba(255, 255, 255, 0.2);
+  --color-blueDark: #001296;
+  --color-blueDefault: #1c35ea;
+  --color-blueLight: #bfc5ff;
+  --color-blueLighter: #eaecff;
+  --color-greenDark: #066f5b;
+  --color-greenDefault: #05f4c8;
+  --color-greenLight: #ccfdf4;
+  --color-redDefault: #ef4444;
+  --color-redDark: #b91c1c;
+  --color-redLight: #fee2e2;
+  --color-backgroundBlueLight: rgba(28, 53, 234, 0.03);
+  --color-backgroundBlue5: rgba(28, 53, 234, 0.05);
+  --color-backgroundBlue10: rgba(28, 53, 234, 0.1);
+  --color-backgroundBlueGradation: linear-gradient(
+    180deg,
+    rgba(28, 53, 234, 0) 0%,
+    rgba(28, 53, 234, 0.1) 50%,
+    rgba(28, 53, 234, 0.1) 100%
+  );
+  --color-backgroundGreen5: rgba(26, 73, 165, 0.05);
+  --color-backgroundGreen10: rgba(26, 73, 165, 0.1);
+  --color-backgroundGreenGradation: linear-gradient(
+    180deg,
+    rgba(5, 244, 200, 0) 0%,
+    rgba(5, 244, 200, 0.1) 50%,
+    rgba(5, 244, 200, 0.1) 100%
+  );
+  --color-backgroundMixGradation: linear-gradient(
+    180deg,
+    rgba(5, 244, 200, 0) 0%,
+    rgba(5, 244, 200, 0.1) 50%,
+    rgba(28, 53, 234, 0.1) 100%
+  );
+
+  --color-background: rgba(255, 255, 255, 1);
+  --color-foreground: rgba(9, 9, 12, 1);
+  --color-card: rgba(255, 255, 255, 1);
+  --color-card-foreground: rgba(9, 9, 12, 1);
+  --color-popover: rgba(255, 255, 255, 1);
+  --color-popover-foreground: rgba(9, 9, 12, 1);
+  --color-primary: rgba(48, 101, 255, 1);
+  --color-primary-foreground: rgba(245, 247, 250, 1);
+  --color-secondary: rgba(238, 242, 248, 1);
+  --color-secondary-foreground: rgba(34, 39, 51, 1);
+  --color-muted: rgba(238, 242, 248, 1);
+  --color-muted-foreground: rgba(111, 119, 129, 1);
+  --color-accent: rgba(238, 242, 248, 1);
+  --color-accent-foreground: rgba(34, 39, 51, 1);
+  --color-destructive: rgba(255, 47, 47, 1);
+  --color-destructive-foreground: rgba(245, 247, 250, 1);
+  --color-border: rgba(204, 211, 224, 1);
+  --color-input: rgba(204, 211, 224, 1);
+  --color-ring: rgba(48, 101, 255, 1);
+  --color-chart-1: rgba(0, 0, 120, 1);
+  --color-chart-2: rgba(30, 70, 180, 1);
+  --color-chart-3: rgba(70, 100, 200, 1);
+  --color-chart-4: rgba(120, 160, 220, 1);
+  --color-chart-5: rgba(180, 210, 240, 1);
+
+  --shadow-gray1: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  --shadow-gray2: 4px 8px 20px 0px rgba(0, 0, 0, 0.2);
+  --shadow-gray3: 4px 20px 40px 0px rgba(0, 0, 0, 0.2);
+  --shadow-gray4: 4px 40px 80px 0px rgba(0, 0, 0, 0.2);
+  --shadow-gray5: 0px -20px 20px 0px rgba(0, 0, 0, 0.08);
+  --shadow-purple1: 2px 2px 12px 0px rgba(0, 18, 150, 0.1);
+  --shadow-purple2: 4px 8px 20px 0px rgba(0, 18, 150, 0.2);
+  --shadow-purple3: 2px 12px 32px 0px rgba(0, 18, 150, 0.2);
+  --shadow-purple4: 4px 40px 80px 0px rgba(0, 18, 150, 0.2);
+  --shadow-purple5: 4px 8px 12px 0px rgba(0, 18, 150, 0.2);
+
+  --drop-shadow-white: 0px 0px 4px rgba(255, 255, 255, 1);
+  --drop-shadow-blue: 0px 0px 12px 0px rgba(28, 53, 234, 0.4);
+
+  --spacing-dynamic-screen: 100dvh;
+  --spacing-dynamic-screen-60: 60dvh;
+  --spacing-dynamic-screen-70: 70dvh;
+  --spacing-dynamic-screen-80: 80dvh;
+  --spacing-dynamic-screen-82: 82dvh;
+  --spacing-dynamic-screen-85: 85dvh;
+  --spacing-exclusionHeaderDvh: calc(var(--spacing-dynamic-screen) - 5.5rem);
+  --spacing-exclusionHeaderDvh2: calc(var(--spacing-dynamic-screen) - 4.375rem);
+  --spacing-exclusionHeaderProgressDvh: calc(
+    var(--spacing-dynamic-screen) - 6.25rem - 5.5rem
+  );
+  --spacing-exclusionHeaderProgressDvh2: calc(
+    var(--spacing-dynamic-screen) - 5.8125rem - 5.5rem - 4.5rem
+  );
+  --spacing-exclusionHeaderProgressDvh3: calc(
+    var(--spacing-dynamic-screen) - 5.375rem - 4.375rem - 4.5rem
+  );
+
+  --animate-smooth-flow: smooth-flow 10s linear infinite;
+  --animate-fadeIn: fadeIn 0.2s ease-in-out;
+  --animate-fadeOut: fadeOut 0.2s ease-in-out;
+  --animate-dimFadeIn: dimFadeIn 0.2s ease-in-out forwards;
+  --animate-dimFadeOut: dimFadeOut 0.2s ease-in-out forwards;
+  --animate-modalFadeIn: modalFadeIn 0.2s ease-in-out forwards;
+  --animate-modalFadeOut: modalFadeOut 0.2s ease-in-out forwards;
+  --animate-modalSlideUp: modalSlideUp 0.2s ease-in-out forwards;
+  --animate-modalSlideDown: modalSlideDown 0.2s ease-in-out forwards;
+  --animate-gradient-xy: gradient-xy 3s linear infinite;
+  --animate-spotlight-inner: spotlightInner 2s infinite;
+  --animate-spotlight-outer: spotlightOuter 2s infinite;
+  --animate-shake: shake 0.5s ease-in-out;
+  --animate-border-blink: border-blink 1s ease-in-out infinite;
+
+  @keyframes smooth-flow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50.5%);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes dimFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.54;
+    }
+  }
+
+  @keyframes dimFadeOut {
+    0% {
+      opacity: 0.54;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes modalFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes modalFadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  @keyframes gradient-xy {
+    0% {
+      background-size: 400% 400%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+
+  @keyframes spotlightInner {
+    0% {
+      transform: scale(0.2);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes spotlightOuter {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-8px);
+    }
+    40% {
+      transform: translateX(8px);
+    }
+    60% {
+      transform: translateX(-4px);
+    }
+    80% {
+      transform: translateX(4px);
+    }
+  }
+
+  @keyframes border-blink {
+    0%,
+    100% {
+      border-color: var(--color-orange-100);
+    }
+    50% {
+      border-color: var(--color-orange-600);
+    }
+  }
+}
+
+@keyframes modalSlideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* 표준 속성 우선 적용 (Chrome 121+, Firefox) */
+* {
+  scrollbar-width: thin;
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+body {
+  font-family: "PretendardVariable", -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+}
+
+.animate-text-blue {
+  background: linear-gradient(90deg, #1c35ea 25%, #7792ff 50%, #1c35ea 100%);
+  background-size: 200% 100%;
+  animation: skeleton 2s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animate-skeleton-text {
+  background: linear-gradient(90deg, #cc6600 25%, #ffe6cc 50%, #ff8000 75%);
+  background-size: 200% 100%;
+  animation: skeleton 2s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animate-skeleton-bg-blue {
+  background: linear-gradient(
+    90deg,
+    rgba(28, 53, 234, 0.4) 25%,
+    rgba(28, 53, 234, 0.8) 50%,
+    rgba(28, 53, 234, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 2s infinite linear;
+}
+
+.animate-skeleton-bg-gray {
+  background: linear-gradient(
+    90deg,
+    rgba(225, 227, 230, 0.4) 25%,
+    rgba(225, 227, 230, 0.8) 50%,
+    rgba(225, 227, 230, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 2s infinite linear;
+}
+
+.animate-skeleton-bg-white {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.4) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 2s infinite linear;
+}
+
+/* 애니메이션 클래스 추가 */
+.animate-spotlight-inner {
+  animation: spotlightInner 2s infinite;
+}
+
+.animate-spotlight-outer {
+  animation: spotlightOuter 2s infinite;
+}
+
+/* 검색 엔진에서 마커 클러스터와 지도 관련 콘텐츠 숨기기 */
+[data-nosnippet] {
+  /* 일반적인 검색 엔진에서 콘텐츠 숨기기 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 구글봇에게 이 영역이 시각적 요소임을 알림 */
+[data-nosnippet]::before {
+  content: "";
+  speak: none;
+}
+
+.modal-container {
+  /* 하드웨어 가속 활성화 */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-container * {
+  /* 자식 요소들에 GPU 레이어 생성 */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* 애니메이션이 실행되는 요소들만 최적화 */
+.animate-fadeIn,
+.animate-fadeOut,
+.animate-modalFadeIn,
+.animate-modalFadeOut,
+.animate-modalSlideUp,
+.animate-modalSlideDown,
+.animate-dimFadeIn,
+.animate-dimFadeOut {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: opacity, transform;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

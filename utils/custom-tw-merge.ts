@@ -1,0 +1,55 @@
+import { extendTailwindMerge } from "tailwind-merge";
+
+// 스타일 안먹으면 여기 추가하기
+const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      "font-size": [
+        "text-1pxr",
+        "text-2pxr",
+        "text-3pxr",
+        "text-4pxr",
+        "text-5pxr",
+        "text-6pxr",
+        "text-8pxr",
+        "text-9pxr",
+        "text-10pxr",
+        "text-11pxr",
+        "text-12pxr",
+        "text-14pxr",
+        "text-15pxr",
+        "text-16pxr",
+        "text-18pxr",
+        "text-20pxr",
+        "text-22pxr",
+        "text-24pxr",
+        "text-26pxr",
+        "text-28pxr",
+        "text-30pxr",
+        "text-32pxr",
+        "text-34pxr",
+        "text-36pxr",
+        "text-38pxr",
+        "text-40pxr",
+        "text-42pxr",
+        "text-44pxr",
+        "text-46pxr",
+        "text-48pxr",
+        "text-50pxr",
+        "text-52pxr",
+        "text-54pxr",
+        "text-56pxr",
+        "text-60pxr",
+        "text-64pxr",
+        "text-72pxr",
+        "text-80pxr",
+        "text-88pxr",
+        "text-96pxr",
+        "text-120pxr",
+        "text-200pxr",
+      ],
+    },
+  },
+});
+
+export default twMerge;
