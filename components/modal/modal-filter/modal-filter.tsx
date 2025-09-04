@@ -1,11 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
-
 import { FilterJobPosting } from "@/components/filter/job-posting";
 import { FilterWorkerPool } from "@/components/filter/worker-pool";
 import { InternalFilterCategory, SelectedOption } from "@/hooks/use-filter";
-import { useWindowWidth } from "@/hooks/use-window-width";
 import { useModalCloseAnimation } from "@/stores/use-modal-close-animation";
 import { cn } from "@/utils/cn";
 
